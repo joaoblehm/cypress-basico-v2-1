@@ -1,6 +1,6 @@
 # cy-data-test
 
-Sample project for the basic course of the Talking About Testing online school.
+Projeto Biger Eats compasso
 
 ## Pre-requirements
 
@@ -24,11 +24,3 @@ Or, run `npm run cy:open` to open Cypress in interactive mode on a desktop viewp
 Run `npm test` (or `npm test:mobile` for the short version) to run the test in headless mode on a mobile viewport.
 
 Or, run `npm run cy:open:mobile` to open Cypress in interactive in mode on a mobile viewport. 
-
-## Support this project
-
-If you want to support this project, leave a ⭐.
-
-___
-
-This project was created with 💚 by [Walmyr](https://walmyr.dev).
