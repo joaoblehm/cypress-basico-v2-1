@@ -4,17 +4,24 @@ const faker = require('faker-br')
 
 
 Cypress.Commands.add('preenchimentodedados',function(){
-    let fullNameFaker = faker.br.name.findName()
-    let geradorCpf = faker.br.cpf()
+    let nomeCompleto = faker.name.findName()
+    let meuCpf = faker.br.cpf()
+    let meuEmail = faker.internet.email(nomeCompleto)
+    let meuTelefone = faker.phone.phoneNumber('(##) # ####-####');
+    
    
-    cy.get('input[name="fullName"]').type(fullNameFaker)
-    cy.get('input[name="cpf"]').type(geradorCpf)
-    cy.get('input[name="email"]').type('joao.blehm@compasso.com.br')
-    cy.get('input[name="whatsapp"]').type('51997405079')
+    cy.get('input[name="fullName"]').type(nomeCompleto)
+    cy.get('input[name="cpf"]').type(meuCpf)
+    cy.get('input[name="email"]').type(meuEmail)
+    cy.get('input[name="whatsapp"]').type(meuTelefone)
 })
 
 Cypress.Commands.add('preenchimentodeendereco',function(){
-    cy.get('input[name="postalcode"]').type('94075000')
-    cy.get('input[name="address-number"]').type('940')
-    cy.get('input[name="address-details"]').type('Casa')
+    //let meuEndereco = faker.address.zipCodeByState('RS')
+    let meuNumero = faker.random.number({min: 1, max: 500})
+    let meuComplemento = faker.address.secondaryAddress()
+
+    cy.get('input[name="postalcode"]').type('90030-130')
+    cy.get('input[name="address-number"]').type(meuNumero)
+    cy.get('input[name="address-details"]').type(meuComplemento)
 })
